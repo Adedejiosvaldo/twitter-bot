@@ -1,12 +1,13 @@
 
+require('dotenv').config(); 
 
 const {TwitterApi} = require('twitter-api-v2');
 
 const userDetails = new TwitterApi({
-    appKey:'BZ0sGrNnHAUnG6ZAqEeE4zBGz',
-    appSecret:'2FsVXbq7oTJYuPqBKqoPxSIcp5xJgjBBMo5eKXf8FFQoZN0aHM',
-    accessSecret:'jiZVi6KDnpULajt7uQzy1UixAhTxhjkoAiD2xTFG6sOcV',
-    accessToken:'1555571309421232129-RBAcfroyixcdGoBPpludEISi3RBZFe'
+    appKey: `${process.env.APP_KEY}`,
+    appSecret:`${process.env.APP_SECRET}`,
+    accessSecret:`${process.env.ACCESS_SECRET}`,
+    accessToken:`${process.env.ACCESS_TOKEN}`
 })
 
 const forwardDetails = userDetails.readWrite;
